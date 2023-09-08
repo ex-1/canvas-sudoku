@@ -1,0 +1,165 @@
+*,
+*:before,
+*:after {
+	font-family: inherit;
+	padding: 0;
+	margin: 0;
+	outline: none;
+	border: none;
+	stroke: none;
+	box-sizing: border-box;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap');
+
+:root {
+	--dark: #0f0f0f;
+	--assist_dark: #090909;
+
+	--light: #f0f0f0;
+	--assist_light: #ffffff80;
+
+	--green: #10d910;
+	--assist_green: #10d91080;
+
+	--yellow: #fafa10;
+	--assist_yellow: #fafa1080;
+
+	--red: #ff1515;
+	--assist_red: #ff151580;
+
+	--blue: #3030ff;
+	--assist_blue: #3030ff80;
+
+	--purple: #af10ff;
+	--assist_purple: #af10ff80;
+
+	--pink: #ff00ff;
+	--assist_pink: #ff00ff80;
+
+	--mainAppTheme: var(--light);
+	--assistAppTheme: var(--assist_light);
+	--font: "monobloco";
+}
+
+body {
+	background-color: var(--dark);
+	font-family: var(--font);
+	color: var(--mainAppTheme);
+	display: block;
+	height: 100%;
+	width: 100%;
+}
+
+header {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.title_box {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0.5rem;
+	margin: 20px auto;
+	user-select: none;
+}
+
+.title {
+	font-size: 32px;
+	font-weight: bold;
+	letter-spacing: 6px;
+	text-shadow: 0 3px 5px var(--assistAppTheme);
+}
+
+.theme__settings_box {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	position: absolute;
+	top: 5%;
+	right: 5%;
+}
+
+.theme__settings:hover { cursor: pointer; }
+.theme__settings {
+	z-index: 10;
+	color: var(--mainAppTheme);
+	font-size: 26px;
+}
+
+.closed {
+	opacity: 0;
+	transform: scaleY(0);
+}
+
+.opened {
+	opacity: 1;
+	transform: scaleY(1);
+}
+
+.colors_box {
+	z-index: 9;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	transform-origin: top center;
+	transition: all 0.5s ease-out;
+}
+
+.colors *:hover { cursor: pointer; }
+.colors * {	
+	padding: 0 5px 5px 5px;
+}
+.colors > * { padding-top: 5px; }
+
+.color_light { color: var(--light); }
+.color_red { color: var(--red); }
+.color_green { color: var(--green); }
+.color_blue { color: var(--blue); }
+.color_yellow { color: var(--yellow); }
+.color_pink { color: var(--pink); }
+.color_purple { color: var(--purple); }
+
+.colors {
+	list-style: none;
+	font-size: 18px;
+}
+
+.colors i {
+	pointer-events: none;
+}
+
+.app {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: auto;
+
+	width: 100%;
+	height: fit-content;
+}
+
+footer {
+	position: absolute;
+	bottom: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-width: 100%;
+	max-height: 50px;
+	min-height: 25px;
+	background-color: var(--assist_dark);
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+
+footer .post__title {
+	font-family: "Consolas";
+	font-weight: bold;
+	font-size: 16px;
+}
